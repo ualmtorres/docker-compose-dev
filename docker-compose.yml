@@ -1,0 +1,18 @@
+version: '2'
+services:
+  calificaciones-api:
+    container_name: calificaciones-api
+    restart: always
+    image: ualmtorres/phalcon-apache-ubuntu
+    ports:
+      - "80:80"
+    volumes:
+      - ./api:/var/www/html
+  calificaciones-front:
+    container_name: calificaciones-front
+    restart: always
+    image: php:7.2-apache
+    ports:
+      - "8088:80"
+    volumes:
+      - ./front:/var/www/html

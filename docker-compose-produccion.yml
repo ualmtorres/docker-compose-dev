@@ -1,0 +1,18 @@
+version: '2'
+services:
+  calificaciones-api:
+    container_name: calificaciones-api
+    restart: always
+    image: ualmtorres/calificaciones-api:v0
+    ports:
+      - "80:80"
+    volumes:
+      - ./api:/var/www/html
+  calificaciones-front:
+    container_name: calificaciones-front
+    restart: always
+    image: ualmtorres/calificaciones-front:v0
+    ports:
+      - "8088:80"
+    volumes:
+      - ./front:/var/www/html
